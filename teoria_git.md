@@ -1,9 +1,11 @@
 # Teoría de Git
 
 ## ¿Qué es Git?
+
 Git es un sistema de control de versiones que permite gestionar los cambios de un proyecto.
 
 ## ¿Por qué usar Git?
+
 - Guarda el historial de cambios
 - Permite trabajo colaborativo
 - Facilita revertir errores
