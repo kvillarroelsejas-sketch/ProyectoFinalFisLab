@@ -1,0 +1,36 @@
+name: Python CI (Poetry)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry --version
+
+      - name: Instalar dependencias
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry install --no-root
+
+      - name: Ejecutar pruebas con pytest
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry run pytest -q
