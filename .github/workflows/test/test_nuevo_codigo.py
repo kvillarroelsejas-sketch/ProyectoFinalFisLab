@@ -1,5 +1,6 @@
+from src.nuevo_codigo 
 import sum
 
-def sum (4, 2):
+def test_sum (4, 2):
 
 assert sum(4 , 2)
