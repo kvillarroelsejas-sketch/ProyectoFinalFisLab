@@ -1,4 +1,4 @@
-import numpy as np
+port numpy as np
 
 def linearizar_datos(x, v):
     X = x**2
