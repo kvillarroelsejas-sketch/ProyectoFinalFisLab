@@ -1,4 +1,4 @@
-3.
+
 # Teoria del Movimiento Armonico Simple 
 
 ## 1. Definicion
@@ -69,5 +69,39 @@ donde \(c\) es el coeficiente de amortiguamiento. Dependiendo del valor relativo
 - Oscilaciones de un resorte-masa.  
 - Pequeñas oscilaciones de un pendulo (aproximacion para angulos pequeños: \(\sin\theta \approx \theta\)).  
 - Circuitos RLC (analogo electrico del MAS).
+
+
+
+
+# periodo_9m_simple.py
+"""
+Persona 2: Calcular periodo para masa 9m
+"""
+
+import numpy as np
+
+# 1. PON TUS DATOS AQUÍ
+k = 12.5          # k que calculó Persona 1 (N/m)
+error_k = 0.3     # error de k (N/m)
+m_3m = 0.3        # masa para "3m" (kg)
+
+# 2. CALCULAR
+m_9m = 3 * m_3m                     # masa 9m
+T = 2 * np.pi * np.sqrt(m_9m / k)   # periodo
+
+# 3. CALCULAR ERROR
+error_T = 0.5 * T * (error_k / k)   # error del periodo
+
+# 4. MOSTRAR RESULTADOS
+print("="*50)
+print("PERIODO PARA MASA 9m")
+print("="*50)
+print(f"k = {k} ± {error_k} N/m")
+print(f"m_3m = {m_3m} kg")
+print(f"m_9m = {m_9m} kg")
+print(f"\nRESULTADO:")
+print(f"T = {T:.3f} ± {error_T:.3f} segundos")
+print(f"f = {1/T:.3f} Hz")
+print("="*50)
 
 ---
